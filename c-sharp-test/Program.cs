@@ -3,11 +3,8 @@ using System.Linq;
 
 namespace c_sharp_test
 {
-    public class Car
+    public class main
     {
-        public string brand;
-        public string model;
-        public string color;
 
         static void Main(string[] args)
         {
@@ -29,10 +26,10 @@ namespace c_sharp_test
                 Console.WriteLine("\n" + i + " " + last);
             }
 
-            int [] sample = new int [10];
+            int[] sample = new int[10];
             int j;
 
-            for(j = 0; j < 10; j++)
+            for (j = 0; j < 10; j++)
             {
                 sample[j] = j;
             }
@@ -42,7 +39,7 @@ namespace c_sharp_test
                 Console.WriteLine("\n[Sample " + j + " ]: " + sample[j]);
             }
 
-            int [] nums = new int [5];
+            int[] nums = new int[5];
             double avg = 0;
 
             nums[0] = 15;
@@ -67,7 +64,15 @@ namespace c_sharp_test
             }
             avg2 = avg2 / 5;
             Console.WriteLine("\n" + avg2);
-            Console.ReadLine();
+
+            Hill hill = new Hill();
+
+            hill.name = "Green Hill";
+            hill.color = "Green";
+
+            Console.WriteLine("The hill name is " + hill.name + " and the color is " + hill.color);
+            Console.Read();
+
         }
     }
 }
