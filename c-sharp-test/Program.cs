@@ -71,7 +71,38 @@ namespace c_sharp_test
             hill.color = "Green";
 
             Console.WriteLine("The hill name is " + hill.name + " and the color is " + hill.color);
+
+
+            Drive drive = new Drive();
+
+            // drive.distance = 200;
+            // drive.time = 5;
+            int calSpeed = drive.speed(200, 5);
+            Console.WriteLine(calSpeed);
+
+
+            string loopName = "Hello World";
+
+            for (int i = 0; i <loopName.Length; i++)
+            {
+                Console.WriteLine(loopName[i]);
+            }
+
+
+            Logic logic = new Logic();
+
+            for (int i = 0; i <10; i++)
+            {
+                if (logic.isPrime(i) == true) {
+                    Console.WriteLine(i + " is a prime number.");
+                } else Console.WriteLine(i + " is not a prime number.");
+            }
+
+
+
+
             Console.Read();
+
 
         }
     }
