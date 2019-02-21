@@ -1,21 +1,19 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
 
 namespace c_sharp_test
 {
-    public class main
+    public class main : Car
     {
 
         static void Main(string[] args)
         {
-            Car car = new Car();
 
-            car.brand = "Porche";
-            car.model = "Camera S";
-            car.color = "Black";
-
-            Console.WriteLine("The car details: " + "\n Brand: " + car.brand + "\n Model: " + car.model + "\n Color: " + car.color);
-
+            carDetail("Porche", "Camera S", "Black");
+            
             string[] arr1 = { "maki", "nigiri", "sahimi" };
             string[] arr2 = { "salad", "stick", "maki" };
 
@@ -56,14 +54,32 @@ namespace c_sharp_test
             Console.WriteLine("\n" + avg);
 
             int[] calAverage = { 12, 56, 79, 95, 54 };
+            int sum = 0;
             int avg2 = 0;
 
             for (int m = 0; m < 5; m++)
             {
+                sum = sum + calAverage[m];
                 avg2 = avg2 + calAverage[m];
             }
             avg2 = avg2 / 5;
-            Console.WriteLine("\n" + avg2);
+            Console.WriteLine("The sum of array's elements is " + sum);
+            Console.WriteLine("The average of the array's elements is " + avg2);
+
+            string[,] userName = new string[2, 2] { {"Bob", "Alice" }, {"John", "Doe"} };
+            Console.WriteLine(userName[1, 1]);
+
+            int[,] towDimArray = new int[3, 4];
+
+            for (int i = 0; i < 3; i++)
+            {
+                for(int k = 0; k < 4; k++)
+                {
+                    towDimArray[i, k] = ((i * 4) + i + 1);
+                    Console.Write(towDimArray[i, k] + " ");
+                }
+                Console.WriteLine();
+            }
 
             Hill hill = new Hill();
 
@@ -72,7 +88,6 @@ namespace c_sharp_test
 
             Console.WriteLine("The hill name is " + hill.name + " and the color is " + hill.color);
 
-
             Drive drive = new Drive();
 
             // drive.distance = 200;
@@ -80,14 +95,12 @@ namespace c_sharp_test
             int calSpeed = drive.speed(200, 5);
             Console.WriteLine(calSpeed);
 
-
             string loopName = "Hello World";
 
             for (int i = 0; i <loopName.Length; i++)
             {
                 Console.WriteLine(loopName[i]);
             }
-
 
             Logic logic = new Logic();
 
@@ -98,12 +111,14 @@ namespace c_sharp_test
                 } else Console.WriteLine(i + " is not a prime number.");
             }
 
+            Console.WriteLine("Maximum size of integer: {0}", int.MaxValue);
+            Console.WriteLine("Minimum size of integer: {0}", int.MinValue);
 
+            saySomething();
 
-
-            Console.Read();
-
+            Console.ReadLine();
 
         }
+
     }
 }
