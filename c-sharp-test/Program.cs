@@ -6,13 +6,14 @@ using System.Globalization;
 
 namespace c_sharp_test
 {
-    public class main : Car
+    public class main
     {
 
         static void Main(string[] args)
         {
+            var car = new Car("Porche", "Camera S", "Black");
 
-            carDetail("Porche", "Camera S", "Black");
+            Console.WriteLine("The car is {0} : {1} and {3} colored", car.Barnd, car.Model, car.Color);
             
             string[] arr1 = { "maki", "nigiri", "sahimi" };
             string[] arr2 = { "salad", "stick", "maki" };
@@ -81,12 +82,10 @@ namespace c_sharp_test
                 Console.WriteLine();
             }
 
-            Hill hill = new Hill();
-
-            hill.name = "Green Hill";
-            hill.color = "Green";
-
-            Console.WriteLine("The hill name is " + hill.name + " and the color is " + hill.color);
+            var hill = new Hill("Green Hill", "Green");
+            
+            
+            Console.WriteLine("The hill name is {0} and it is {1} colored", hill.Name, hill.Color);
 
             Drive drive = new Drive();
 
@@ -119,6 +118,12 @@ namespace c_sharp_test
             Console.ReadLine();
 
         }
-
+        public static void saySomething()
+        {
+            string name = "";
+            Console.Write("Enter your fist name: ");
+            name = Console.ReadLine();
+            Console.Write("Hello {0} ", name);
+        }
     }
 }

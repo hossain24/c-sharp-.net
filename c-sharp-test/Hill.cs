@@ -6,7 +6,13 @@ namespace c_sharp_test
 {
     public class Hill
     {
-        public string name;
-        public string color;
+        public string Name;
+        public string Color;
+
+        public Hill(string name, string color)
+        {
+            this.Name = name;
+            this.Color = color;
+        }
     }
 }
